@@ -1,8 +1,10 @@
 import React from 'react'
 import news1 from "../../assets/news1.png"
 import news2 from "../../assets/news2.png"
+import { useNavigate } from 'react-router-dom'
 
 function News() {
+    const navigate=useNavigate();
   return (
     <section className='flex flex-col gap-12 justify-center items-center py-12 font-inter'>
         <h1 className='text-[#051114] text-[44px] font-medium'>Lastest insights news</h1>

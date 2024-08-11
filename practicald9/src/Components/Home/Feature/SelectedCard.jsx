@@ -7,7 +7,7 @@ function SelectedCard({ icon, data, color }) {
 		<div className='bg-gradient-to-t from-[#692BC3] to-[#FFFFFF] p-[1px] rounded-[10px]  '>
 			<div className='w-[260px]  flex flex-col gap-12 justify-center items-center  rounded-[10px]  bg-white'>
 				<div
-					className={` rounded-[50%] p-5 h-[150px] w-[150px] flex justify-center items-center mt-6 z-10`}
+					className={` rounded-[50%] p-5 h-[150px] w-[150px] flex justify-center items-center mt-6 z-10 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300`}
 					style={{backgroundColor:color}}
 					>
 					{icon}
@@ -34,7 +34,7 @@ function SelectedCard({ icon, data, color }) {
 					<p className='text-[14px] text-white'>
 						Lorem ipsum dolor sit amet consectetur adipisicing elit.
 					</p>
-					<div onClick={()=>navigate("/free-trial")}>
+					<div onClick={()=>navigate("/free-trial")} className="cursor-pointer">
 					<svg
 						width='32'
 						height='32'

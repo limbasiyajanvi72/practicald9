@@ -53,19 +53,19 @@ function Footer() {
 		<article className="flex flex-col gap-4 text-white ">
 		<p className="font-medium text-white ">Resources</p>
 				<div className="flex flex-wrap flex-row lg:flex-col gap-6 lg:gap-2 font-extralight opacity-65">
-					<span>Services</span>
-					<span>Pricing</span>
-					<span>Testimonials</span>
-					<span>Blog</span>
+					<span className="hover:underline cursor-pointer">Services</span>
+					<span className="hover:underline cursor-pointer">Pricing</span>
+					<span className="hover:underline cursor-pointer">Testimonials</span>
+					<span className="hover:underline cursor-pointer">Blog</span>
 					</div>
 		</article>
 		<article className="flex flex-col gap-4 text-white ">
 		<p className="font-medium text-white">Usefull links</p>
 				<div className="flex flex-wrap  lg:flex-col gap-6 lg:gap-2 font-extralight opacity-65">
-					<span>Terms of Setvices</span>
-					<span>Privacy Policy</span>
-					<span>Cookie Policy</span>
-					<span>Contact Us</span>
+					<span className="hover:underline cursor-pointer">Terms of Setvices</span>
+					<span className="hover:underline cursor-pointer">Privacy Policy</span>
+					<span className="hover:underline cursor-pointer">Cookie Policy</span>
+					<span className="hover:underline cursor-pointer">Contact Us</span>
 					</div>
 		</article>
 			
@@ -73,7 +73,7 @@ function Footer() {
 					<p className="font-medium text-white">Newsletter</p>
 					<p className="text-white font-extralight  opacity-65">Sign up and receive the lastest news via email.</p>
 					<div className="flex">
-					<input type="email" placeholder="Email address" className="bg-[#051114] border-[0.5px] rounded-tl-[5px] rounded-bl-[5px] border-white border-opacity-30 p-2"/>
+					<input type="email" placeholder="Email address" className="bg-[#051114] border-[0.5px] rounded-tl-[5px] rounded-bl-[5px] border-white border-opacity-30 p-2 text-white focus:outline-0 focus:border-[1px]"/>
 					<button className="text-white bg-[#42B4EE] w-[100px] h-[50px]"> 
 						Send
 					</button>

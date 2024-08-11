@@ -5,9 +5,9 @@ import { useNavigate } from 'react-router-dom';
 function Card({ icon, data, color }) {
 	const navigate=useNavigate();
 	return (
-		<div className='w-[260px]  flex flex-col  gap-6 justify-center items-center rounded-[10px] shadow-[0px_6px_50px_5px_rgba(6,14,26,0.05)]'>
+		<div className='w-[260px]  flex flex-col  gap-6 justify-center items-center rounded-[10px] shadow-[0px_6px_50px_5px_rgba(6,14,26,0.05)] '>
 			<div
-				className={` rounded-[50%] p-5 h-[150px] w-[150px] flex justify-center items-center mt-7`}
+				className={` rounded-[50%] p-5 h-[150px] w-[150px] flex justify-center items-center mt-7 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300`}
 				style={{ backgroundColor: color }}
 			>
 				{icon}
@@ -18,7 +18,7 @@ function Card({ icon, data, color }) {
 				<p className='text-[14px] text-[#51565E]'>
 					Lorem ipsum dolor sit amet consectetur adipisicing elit.
 				</p>
-				<div onClick={()=>navigate("/free-trial")}>
+				<div onClick={()=>navigate("/free-trial")} className="cursor-pointer">
 				<svg
 					width='32'
 					height='32'
