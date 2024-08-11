@@ -1,12 +1,15 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 function SelectedCard({ icon, data, color }) {
+	const navigate=useNavigate();
 	return (
 		<div className='bg-gradient-to-t from-[#692BC3] to-[#FFFFFF] p-[1px] rounded-[10px]  '>
 			<div className='w-[260px]  flex flex-col gap-12 justify-center items-center  rounded-[10px]  bg-white'>
 				<div
-					className={`bg-[${color}] rounded-[50%] p-5 h-[150px] w-[150px] flex justify-center items-center mt-6 z-10`}
-				>
+					className={` rounded-[50%] p-5 h-[150px] w-[150px] flex justify-center items-center mt-6 z-10`}
+					style={{backgroundColor:color}}
+					>
 					{icon}
 				</div>
 
@@ -31,6 +34,7 @@ function SelectedCard({ icon, data, color }) {
 					<p className='text-[14px] text-white'>
 						Lorem ipsum dolor sit amet consectetur adipisicing elit.
 					</p>
+					<div onClick={()=>navigate("/free-trial")}>
 					<svg
 						width='32'
 						height='32'
@@ -57,6 +61,7 @@ function SelectedCard({ icon, data, color }) {
 							strokeLinejoin='round'
 						/>
 					</svg>
+					</div>
 				</div>
 			</div>
 		</div>

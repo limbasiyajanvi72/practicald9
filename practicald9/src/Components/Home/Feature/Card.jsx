@@ -1,8 +1,11 @@
 import React from "react";
+import { useNavigate } from 'react-router-dom';
+
 
 function Card({ icon, data, color }) {
+	const navigate=useNavigate();
 	return (
-		<div className='w-[260px]  flex flex-col gap-6 justify-center items-center rounded-[10px] shadow-[0px_6px_50px_5px_rgba(6,14,26,0.05)]'>
+		<div className='w-[260px]  flex flex-col  gap-6 justify-center items-center rounded-[10px] shadow-[0px_6px_50px_5px_rgba(6,14,26,0.05)]'>
 			<div
 				className={` rounded-[50%] p-5 h-[150px] w-[150px] flex justify-center items-center mt-7`}
 				style={{ backgroundColor: color }}
@@ -15,6 +18,7 @@ function Card({ icon, data, color }) {
 				<p className='text-[14px] text-[#51565E]'>
 					Lorem ipsum dolor sit amet consectetur adipisicing elit.
 				</p>
+				<div onClick={()=>navigate("/free-trial")}>
 				<svg
 					width='32'
 					height='32'
@@ -41,6 +45,7 @@ function Card({ icon, data, color }) {
 						stroke-linejoin='round'
 					/>
 				</svg>
+				</div>
 			</div>
 		</div>
 	);

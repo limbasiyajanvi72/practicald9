@@ -1,7 +1,7 @@
 import React from "react";
 
 function Blog() {
-	return <div>Blog</div>;
+	return <div className="flex h-[70vh]   w-full h-full ">Blog</div>;
 }
 
 export default Blog;

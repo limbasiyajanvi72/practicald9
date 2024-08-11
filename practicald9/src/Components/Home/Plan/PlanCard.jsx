@@ -1,6 +1,9 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
-function PlanCard({ heading, price, time, user }) {
+function PlanCard({ heading, price, time, user,status }) {
+	const navigate=useNavigate();
+
 	return (
 		<section className='flex flex-col gap-12 justify-center items-center w-[360px] h-[480px] shadow-[0px_6px_50px_5px_#060E1A0D] rounded-bl-[10px] rounded-br-[10px]'>
 			<article className='text-center'>
@@ -35,7 +38,7 @@ function PlanCard({ heading, price, time, user }) {
 						{price}
 					</span>
 					<span className='text-[32px] font-medium leading-[44.8px]'>
-						{time}
+						{status?"/year":"/mo"}
 					</span>
 				</div>
 			</article>
@@ -45,7 +48,7 @@ function PlanCard({ heading, price, time, user }) {
 				<span>{user} user license</span>
 				<span>Hotline support 24/7</span>
 			</article>
-			<button className='text-[#42B4EE] font-medium text-[16px] py-[15px] px-[30px] bg-[#42B4EE1A] rounded-[5px]'>
+			<button className='text-[#42B4EE] font-medium text-[16px] py-[15px] px-[30px] bg-[#42B4EE1A] rounded-[5px]' onClick={()=>navigate("/free-trial")}>
 				TRY THIS PACKAGE
 			</button>
 		</section>

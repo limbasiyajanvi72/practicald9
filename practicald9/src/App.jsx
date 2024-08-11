@@ -6,6 +6,7 @@ import Services from "./Components/Services";
 import Pricing from "./Components/Pricing";
 import Testimonials from "./Components/Testimonials";
 import Blog from "./Components/Blog";
+import FreeTrial from "./Components/FreeTrial"
 
 function App() {
 	return (
@@ -17,6 +18,7 @@ function App() {
 					<Route path='/pricing' element={<Pricing />} />
 					<Route path='/testimonials' element={<Testimonials />} />
 					<Route path='/blog' element={<Blog />} />
+					<Route path="/free-trial" element={<FreeTrial/>}/>
 				</Route>
 			</Routes>
 		</BrowserRouter>

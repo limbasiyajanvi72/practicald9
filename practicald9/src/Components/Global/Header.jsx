@@ -1,19 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Home_Image from "../../assets/home-image.png";
+import Home_Image from "../../assets/header-image.png";
 import RightBig from "../../assets/rightBig.png";
 import RightSmall from "../../assets/rightSmall.png";
 import LeftBig from "../../assets/leftBig.png";
 import LeftSmall from "../../assets/leftSmall.png";
+import { FaHome } from "react-icons/fa";
+import { MdOutlineMiscellaneousServices } from "react-icons/md";
+import { IoIosPricetags } from "react-icons/io";
+import { MdRateReview } from "react-icons/md";
+import { ImBlog } from "react-icons/im";
+
+
 
 function Header() {
 	const navigate = useNavigate();
+	const[isToggle,setIsToggle]=useState(false);
+	const closeMenu=()=>{
+		if(isToggle){
+			setIsToggle(false);
+		}
+	}
 	return (
 		<>
 			<section
-				className={`w-[100%] bg-[linear-gradient(251.29deg,#7F3CE0_0.57%,#461096_99.97%)] font-inter relative 
+				className={`w-[100%] bg-[linear-gradient(251.29deg,#7F3CE0_0.57%,#461096_99.97%)] font-inter relative z-0 
 					
-				`}
+				`}onClick={()=>closeMenu()}
 			>
 				<article className='w-[90%] m-auto flex justify-between py-5 items-center'>
 					<div
@@ -45,7 +58,7 @@ function Header() {
 							/>
 						</svg>
 					</div>
-					<div className='flex gap-10   items-center font-light z-10'>
+					<div className='hidden lg:flex gap-10   items-center font-light z-10'>
 						<div
 							className=' text-white opacity-80 cursor-pointer'
 							onClick={() => navigate("/")}
@@ -76,10 +89,59 @@ function Header() {
 						>
 							Blog
 						</div>
-						<button className='bg-[#36b5eb] text-white py-4 px-5 rounded-md text-base font-medium'>
+						<button className='bg-[#36b5eb] text-white py-4 px-5 rounded-md text-base font-medium hover:bg-[#36a4d3]' onClick={()=>navigate("/free-trial")}>
 							FREE TRIAL
 						</button>
 					</div>
+					<div onClick={()=>setIsToggle(!isToggle)}  className="block lg:hidden cursor-pointer">
+					<svg
+  xmlns="http://www.w3.org/2000/svg"
+  x="0px"
+  y="0px"
+  width="30"
+  height="30"
+  viewBox="0 0 256 256"
+  fill="none"
+  stroke="none"
+  strokeWidth="1"
+  strokeLinecap="butt"
+  strokeLinejoin="miter"
+  strokeMiterlimit="10"
+  fontFamily="none"
+  fontWeight="none"
+  fontSize="none"
+  textAnchor="none"
+  style={{ mixBlendMode: "normal" }}
+ 
+>
+  <g transform="scale(5.12,5.12)">
+    <path
+      d="M0,7.5v5h50v-5zM0,22.5v5h50v-5zM0,37.5v5h50v-5z"
+      fill="#ffffff"
+      fillRule="nonzero"
+    />
+  </g>
+</svg>
+</div>
+
+<div
+        className={`fixed top-0 right-0 h-full bg-white text-[#5A1FAF] font-noraml
+			 text-[18px] w-52 transform ${
+          isToggle ? "-translate-x-0" : "translate-x-full"
+        } transition-transform duration-300 ease-in-out z-10`}
+      >
+        <div className="flex flex-col gap-4 p-3">
+         <div className={`flex gap-2 p-2  rounded-md cursor-pointer ${window.location.pathname==="/"?"bg-[#e0d1f7]":""}`} onClick={()=>navigate("/")}><FaHome className="h-6 w-6"/>Home</div>
+		 <div className={`flex gap-2 p-2  rounded-md cursor-pointer ${window.location.pathname.includes("/services")?"bg-[#e0d1f7]":""}`} onClick={()=>navigate("/services")}><MdOutlineMiscellaneousServices className="h-7 w-7"/>Services</div>
+		 <div className={`flex gap-2 p-2  rounded-md cursor-pointer ${window.location.pathname.includes("/pricing")?"bg-[#e0d1f7]":""}`} onClick={()=>navigate("/pricing")}><IoIosPricetags className="h-6 w-6"/>Pricing</div>
+		 <div className={`flex gap-2 p-2  rounded-md cursor-pointer ${window.location.pathname.includes("/testimonials")?"bg-[#e0d1f7]":""}`} onClick={()=>navigate("/testimonials")}><MdRateReview/>Testimonials</div>
+		 <div className={`flex gap-2 p-2  rounded-md cursor-pointer ${window.location.pathname.includes("/blog")?"bg-[#e0d1f7]":""}`} onClick={()=>navigate("/blog")}><ImBlog/>Blog</div>
+		 <button className="bg-[#42B4EE] text-white p-2 rounded-[5px] hover:bg-[#36a4d3]" onClick={()=>navigate("/free-trial")}>Free trial</button>
+
+        </div>
+      </div>
+
+
 					<img
 						src={RightBig}
 						className='hidden xl:block absolute top-0 right-36 z-0'
@@ -98,8 +160,8 @@ function Header() {
 					/>
 				</article>
 				{window.location.pathname === "/" ? (
-					<article className='w-[90%] m-auto flex justify-between py-20 items-center'>
-						<div className='w-[38%] flex flex-col gap-4'>
+					<article className='w-[90%] m-auto flex flex-col gap-5  lg:flex-row  lg:justify-between py-20 items-center'>
+						<div className='lg:w-[38%]  flex flex-col gap-4'>
 							<h1 className='font-medium text-white text-6xl leading-[70px]'>
 								Codext one of the best system in SAAS.
 							</h1>
@@ -108,14 +170,14 @@ function Header() {
 								adipisicing elit. Odio labore eveniet explicabo
 								deleniti placeat obcaecati dolor hic delectus!{" "}
 							</p>
-							<button className='bg-[#36b5eb] text-white p-4 rounded-md w-[190px] text-lg font-normal'>
+							<button className='bg-[#36b5eb] text-white p-4 rounded-md w-[190px] text-lg font-normal hover:bg-[#36a4d3]' onClick={()=>navigate("/free-trial")}>
 								Try A Live Demo
 							</button>
 						</div>
 						<img
 							src={Home_Image}
 							alt='home-image'
-							className='w-[50%]'
+							className='lg:w-[50%]'
 						/>
 					</article>
 				) : (

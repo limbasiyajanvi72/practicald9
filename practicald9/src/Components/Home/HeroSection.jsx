@@ -9,10 +9,10 @@ function HeroSection() {
 				src={BackgroundImage}
 				className='hidden xl:block absolute  z-0 w-[60%]'
 			/>
-			<section className='w-[90%] m-auto flex gap-10 justify-between items-center py-28 relative'>
-				<img src={HeroImage} className='w-[50%] z-10 ' />
+			<section className='w-[90%] m-auto flex flex-col lg:flex-row  gap-10 lg:justify-between lg:items-center py-28 relative'>
+				<img src={HeroImage} className='lg:w-[50%] m-auto z-10 ' />
 
-				<article className='w-[40%]'>
+				<article className='lg:w-[40%]'>
 					<h2 className='leading-[57px] text-[44px] font-semibold text-[#051114] py-10 '>
 						It’s helpful for operating system
 					</h2>

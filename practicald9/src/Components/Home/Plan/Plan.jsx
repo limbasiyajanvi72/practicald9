@@ -14,7 +14,8 @@ function Plan() {
 	console.log(isToggled);
 
 	return (
-		<section className='font-inter my-20 bg-[#fbfbfb]'>
+		<section className="w-[100%]">
+		<section className='font-inter py-20 bg-[#fbfbfb] w-[90%] m-auto'>
 			<article className='flex flex-col gap-6'>
 				<h1 className='text-[#051114] text-[44px] leading-[57.2px] font-medium text-center'>
 					Choose your best pricing plan
@@ -34,27 +35,28 @@ function Plan() {
 					<span>Yearly</span>
 				</span>
 			</article>
-			<article className='flex gap-8 justify-center my-20'>
+			<article className='flex gap-8 justify-center flex-wrap my-20'>
 				{PLAN_DATA.map((plan, index) => (
 					<div onClick={() => setPlanSelected(index)}>
 						{planSelected === index ? (
 							<PlanSelctedcard
 								heading={plan.HEADING}
 								price={plan.PRICE}
-								time={plan.TIME}
 								user={plan.USER}
+								status={isToggled}
 							/>
 						) : (
 							<PlanCard
 								heading={plan.HEADING}
 								price={plan.PRICE}
-								time={plan.TIME}
 								user={plan.USER}
+								status={isToggled}
 							/>
 						)}
 					</div>
 				))}
 			</article>
+		</section>
 		</section>
 	);
 }
